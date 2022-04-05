@@ -33,10 +33,10 @@ dut_donna: $(OBJS_DONNA) examples/donna/dut_donna.c
 dut_donnabad: $(OBJS_DONNABAD) examples/donnabad/dut_donnabad.c
 	$(CC) $(LDFLAGS) $(INCS) -o dudect_donnabad_$(OPTIMIZATION) examples/donnabad/$@.c $(OBJS_DONNABAD) $(LIBS)
 
-dut_simple: examples/simple/example.c
+dut_simple: examples/simple/example2.c
 	# higher compiler optimization levels can make this constant time
-	$(CC) -O0 $(INCS) -o dudect_simple_O0 examples/simple/example.c $(LIBS)
-	$(CC) -O2 $(INCS) -DMEASUREMENTS_PER_CHUNK=100000 -o dudect_simple_O2 examples/simple/example.c $(LIBS)
+	$(CC) -O0 $(INCS) -o dudect_simple_O0 examples/simple/example2.c $(LIBS)
+	$(CC) -O2 $(INCS) -DMEASUREMENTS_PER_CHUNK=100000 -o dudect_simple_O2 examples/simple/example2.c $(LIBS)
 
 .c.o:
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
